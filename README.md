@@ -1,4 +1,4 @@
-# Multimodal Alzheimer's Disease Classification Using Spectral Features and Biomarkers
+# Multimodal Alzheimer's Disease Classification Using EEG Spectral Features and fNIRS Biomarkers
 
 <p align="center">
   <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -15,7 +15,7 @@
 
 ***
 
-## Overview
+## Introduction
 
 A multimodal Alzheimer's disease classification project built using **Python, scikit-learn, NumPy, pandas, and signal-processing techniques** on EEG spectral features and fNIRS hemodynamic biomarkers, with primary implementation focus on the **fNIRS pipeline** for the current repository.
 
@@ -51,9 +51,26 @@ The project is built to demonstrate professional machine learning and applied da
 
 ***
 
-## Visuals / Demo
+### fNIRS Workflow
 
-> After uploading your screenshots to GitHub, keep the image names the same as below or update the paths.
+1. Load subject-level HbO and HbR CSV files.
+2. Convert raw data into channel-first tensors.
+3. Handle missing values using interpolation and subject-level QC rules.
+4. Apply per-channel z-score normalization.
+5. Extract statistical, spectral, and connectivity features.
+6. Compare RFE and LASSO for feature selection.
+7. Train and evaluate classifiers using LOOCV.
+8. Analyze clinically motivated fusion strategy in multimodal context.
+
+## fNIRS Dataset Snapshot
+
+- **Subjects:** 42
+- **Class distribution:** 16 Alzheimer's Disease (AD), 26 Healthy Controls (HC)
+- **Recording state:** Resting state, eyes closed
+- **Duration:** 15.1 seconds
+- **Sampling frequency:** 10 Hz
+- **Signals used:** HbO and HbR
+- **Spatial coverage:** 4 channels
 
 ### fNIRS Preprocessing
 
@@ -67,27 +84,6 @@ The project is built to demonstrate professional machine learning and applied da
   <img src="images/image-2.png" alt="fNIRS feature engineering pipeline" width="900" />
 </p>
 
-### Feature Groups and LOOCV Results
-
-will add
-
-### Project Summary Snapshot
-
-will add
-***
-
-## fNIRS Dataset Snapshot
-
-- **Subjects:** 42
-- **Class distribution:** 16 Alzheimer's Disease (AD), 26 Healthy Controls (HC)
-- **Recording state:** Resting state, eyes closed
-- **Duration:** 15.1 seconds
-- **Sampling frequency:** 10 Hz
-- **Signals used:** HbO and HbR
-- **Spatial coverage:** 4 channels
-
-***
-
 ## fNIRS Feature Groups
 
 | Feature Group | Count | Description |
@@ -97,21 +93,6 @@ will add
 | Band Power (Relative) | 24 | Relative power in 3 frequency bands × 4 channels × 2 chromophores |
 | Inter-channel Correlation | 12 | Pairwise Pearson correlation across 4 channels × HbO + HbR |
 | **Total** | **116** | **Complete per-subject feature vector** |
-
-***
-
-## Pipeline
-
-### fNIRS Workflow
-
-1. Load subject-level HbO and HbR CSV files.
-2. Convert raw data into channel-first tensors.
-3. Handle missing values using interpolation and subject-level QC rules.
-4. Apply per-channel z-score normalization.
-5. Extract statistical, spectral, and connectivity features.
-6. Compare RFE and LASSO for feature selection.
-7. Train and evaluate classifiers using LOOCV.
-8. Analyze clinically motivated fusion strategy in multimodal context.
 
 ### Modeling Approach
 
