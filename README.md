@@ -17,7 +17,7 @@
 
 ## Overview
 
-A multimodal Alzheimer's disease classification project built using **Python, scikit-learn, NumPy, pandas, and signal-processing techniques** on EEG spectral features and fNIRS hemodynamic biomarkers, with primary implementation focus on the **fNIRS pipeline**.
+A multimodal Alzheimer's disease classification project built using **Python, scikit-learn, NumPy, pandas, and signal-processing techniques** on EEG spectral features and fNIRS hemodynamic biomarkers, with primary implementation focus on the **fNIRS pipeline** for the current repository.
 
 This project is designed as an end-to-end biomedical machine learning workflow for early Alzheimer's detection using non-invasive brain signals. It includes fNIRS preprocessing, HbO/HbR signal cleaning, feature extraction, RFE and LASSO-based feature selection, LOOCV-based model evaluation, Random Forest and baseline classifier comparison, EEG-based multimodal context, and clinically motivated fusion analysis for improved diagnostic performance.
 
