@@ -158,7 +158,7 @@ While EEG is part of the broader multimodal study, the strongest hands-on implem
 
 ***
 
-## Suggested Repository Structure
+## Repository Structure
 
 ```bash
 .
