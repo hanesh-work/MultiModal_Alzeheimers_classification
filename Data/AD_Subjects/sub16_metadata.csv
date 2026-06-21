@@ -1,0 +1,2 @@
+channels,timepoints,concentrations,shape,has_nan
+4,288,2,"(4, 288, 2)",True
